@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sala</title>
+<style>:root{--papel:#f3f5f2;--tarjeta:#fff;--tinta:#1c2320;--suave:#56615b;--borde:#d6ddd7;--acento:#2e5e4e;
+--ok:#2f6b40;--ok-fondo:#e6f2e9;--prestado:#875600;--prestado-fondo:#fcf1d8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--papel:#141816;--tarjeta:#1c211f;--tinta:#e7ece9;--suave:#a3aea8;
+--borde:#2f3833;--acento:#6fb59a;--ok:#86c79a;--ok-fondo:#1d2e22;--prestado:#e6b85c;--prestado-fondo:#3a2f17;color-scheme:dark}}
+*{box-sizing:border-box}html{font-size:17px}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:system-ui,'Segoe UI',sans-serif;line-height:1.5}
+header{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;
+padding:.75rem 1rem;background:var(--tarjeta);border-bottom:1px solid var(--borde)}
+header .marca{font-family:Georgia,serif;font-size:1.1rem;color:var(--tinta);text-decoration:none;min-width:0}
+.letra{display:flex;gap:.25rem}.letra button{font:inherit;font-size:.95rem;padding:.3rem .7rem;border:1px solid var(--borde);
+border-radius:.5rem;background:var(--papel);color:var(--tinta);cursor:pointer}
+main{max-width:48rem;margin:0 auto;padding:1rem 1rem 3rem}
+h1{font-family:Georgia,serif;font-size:1.5rem;line-height:1.25;margin:.5rem 0}
+h2{font-size:1.2rem;margin:1.5rem 0 .5rem}h3{font-size:1.05rem;margin:1rem 0 .4rem}
+a{color:var(--acento)}p{margin:.4rem 0}.nota,.lugar{color:var(--suave);font-size:.95rem}
+code,.sig{font-family:Consolas,'Cascadia Mono',monospace;overflow-wrap:anywhere}
+ul.enlaces,ol.libros{list-style:none;padding:0;margin:.5rem 0;display:grid;gap:.5rem}
+ul.enlaces li,ol.libros li{background:var(--tarjeta);border:1px solid var(--borde);border-radius:.6rem;padding:.6rem .8rem;
+overflow-wrap:anywhere;min-width:0}
+ol.libros li{display:grid;gap:.1rem}.tit{font-family:Georgia,serif;font-size:1.05rem}.aut{color:var(--suave)}
+.estado{justify-self:start;font-size:.875rem;border-radius:1rem;padding:0 .6rem}
+.disponible{color:var(--ok);background:var(--ok-fondo)}.prestado{color:var(--prestado);background:var(--prestado-fondo)}
+form.buscar{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+form.buscar input{flex:1 1 12rem;min-width:0;font:inherit;padding:.6rem .8rem;border:1px solid var(--borde);
+border-radius:.5rem;background:var(--tarjeta);color:var(--tinta)}
+form.buscar button{font:inherit;padding:.6rem 1rem;border:0;border-radius:.5rem;background:var(--acento);color:#fff}
+footer{max-width:48rem;margin:0 auto;padding:0 1rem 2rem;color:var(--suave);font-size:.875rem}</style>
+</head>
+<body>
+<header><a class="marca" href="../index.html">Biblioteca de la Audiencia Provincial de Pontevedra</a><span class="letra" role="group" aria-label="Tamaño de letra"><button type="button" data-letra="-1" aria-label="Letra más pequeña">A−</button><button type="button" data-letra="1" aria-label="Letra más grande">A+</button></span></header>
+<main>
+<h1>Sala</h1>
+<p class="nota">3.174 libros</p>
+<h2>General</h2>
+<h3>Estantería 01</h3><ul class="enlaces">
+<li><a href="S-01-1.html">Balda 1</a> · <code>008 DIC — 330 GLO</code> · Civilización. Cultura · 14 libros</li>
+<li><a href="S-01-2.html">Balda 2</a> · <code>336 ANA — 336.563.1(04) EJE M16533</code> · Hacienda pública. Finanzas · 17 libros</li>
+<li><a href="S-01-3.html">Balda 3</a> · <code>34 ALC dic — 34(038) DIC dic</code> · Derecho. Ciencias jurídicas · 11 libros</li>
+<li><a href="S-01-4.html">Balda 4</a> · <code>340 DER — 340 NUE</code> · Derecho en general. Teoría del derecho · 16 libros</li>
+<li><a href="S-01-5.html">Balda 5</a> · <code>340 NUE — 340.142 FER car</code> · Derecho en general. Teoría del derecho · 17 libros</li>
+<li><a href="S-01-6.html">Balda 6</a> · <code>340.23 LIB lib — 340.6 GUE con</code> · Medicina legal. Ciencias forenses · 12 libros</li>
+<li><a href="S-01-7.html">Balda 7</a> · <code>340.6 GUI — 340.6 VIO</code> · Medicina legal. Ciencias forenses · 16 libros</li>
+<li><a href="S-01-8.html">Balda 8</a> · <code>341 AGU acu — 341 CON</code> · Derecho internacional · 13 libros</li>
+<li><a href="S-01-9.html">Balda 9</a> · <code>341 DER — 341 GAR pro</code> · Derecho internacional · 14 libros</li>
+<li><a href="S-01-10.html">Balda 10</a> · <code>341 HAC — 341 LIB</code> · Derecho internacional · 16 libros</li>
+<li><a href="S-01-11.html">Balda 11</a> · <code>341 LÓP cód — 341 ORD int</code> · Derecho internacional · 14 libros</li>
+<li><a href="S-01-12.html">Balda 12</a> · <code>341 PAS asp — 341 TOB tra</code> · Derecho internacional · 13 libros</li>
+<li><a href="S-01-13.html">Balda 13</a> · <code>341 TRA — 341.4 CRI</code> · Derecho internacional · 15 libros</li>
+<li><a href="S-01-14.html">Balda 14</a> · <code>341.4 DER — 341.9 COO</code> · Derecho penal internacional · 16 libros</li>
+<li><a href="S-01-15.html">Balda 15</a> · <code>341.9 CUE — 341.98 COM com</code> · Derecho internacional privado · 15 libros</li>
+<li><a href="S-01-16.html">Balda 16</a> · <code>342 ADM — 342 CLI tri</code> · Derecho público. Derecho constitucional · 14 libros</li>
+<li><a href="S-01-17.html">Balda 17</a> · <code>342 COL prá — 342 CON</code> · Derecho público. Derecho constitucional · 14 libros</li>
+<li><a href="S-01-18.html">Balda 18</a> · <code>342 CUE — 342 EST</code> · Derecho público. Derecho constitucional · 15 libros</li>
+<li><a href="S-01-19.html">Balda 19</a> · <code>342 EST — 342 FRA cód</code> · Derecho público. Derecho constitucional · 15 libros</li>
+<li><a href="S-01-20.html">Balda 20</a> · <code>342 GAR apl — 342 JUE</code> · Derecho público. Derecho constitucional · 13 libros</li>
+<li><a href="S-01-21.html">Balda 21</a> · <code>342 JUR — 342 MEM</code> · Derecho público. Derecho constitucional · 16 libros</li>
+<li><a href="S-01-22.html">Balda 22</a> · <code>342 MEM — 342 MEM 2001</code> · Derecho público. Derecho constitucional · 15 libros</li>
+<li><a href="S-01-23.html">Balda 23</a> · <code>342 MEM 2002 — 342 PÉR rec</code> · Derecho público. Derecho constitucional · 14 libros</li>
+<li><a href="S-01-24.html">Balda 24</a> · <code>342 PIB prá — 342 REC</code> · Derecho público. Derecho constitucional · 16 libros</li>
+<li><a href="S-01-25.html">Balda 25</a> · <code>342 REF — 342.25 POS M1603</code> · Derecho público. Derecho constitucional · 14 libros</li>
+<li><a href="S-01-26.html">Balda 26</a> · <code>342.56 IND ind — 342.7 DEC</code> · Derechos fundamentales y libertades públicas · 13 libros</li>
+<li><a href="S-01-27.html">Balda 27</a> · <code>342.7 DER — 342.7 EST der</code> · Derechos fundamentales y libertades públicas · 15 libros</li>
+<li><a href="S-01-28.html">Balda 28</a> · <code>342.7 EXT — 342.7 JUS</code> · Derechos fundamentales y libertades públicas · 15 libros</li>
+<li><a href="S-01-29.html">Balda 29</a> · <code>342.7 LIB — 342.7 ORD igu</code> · Derechos fundamentales y libertades públicas · 15 libros</li>
+<li><a href="S-01-30.html">Balda 30</a> · <code>342.7 PER der — 342.7 SÁI obj</code> · Derechos fundamentales y libertades públicas · 13 libros</li>
+<li><a href="S-01-31.html">Balda 31</a> · <code>342.7 SÁN del — 342.73 ALG alg</code> · Derechos fundamentales y libertades públicas · 16 libros</li>
+<li><a href="S-01-32.html">Balda 32</a> · <code>342.73 REG reg — 342.8 REG</code> · Derechos fundamentales y libertades públicas · 12 libros</li>
+<li><a href="S-01-33.html">Balda 33</a> · <code>342.9 BEN pro — 342.9 INS</code> · Derecho administrativo · 17 libros</li>
+<li><a href="S-01-34.html">Balda 34</a> · <code>342.9 INT — 342.95 GOS nue 2016</code> · Derecho administrativo · 17 libros</li>
+<li><a href="S-01-35.html">Balda 35</a> · <code>343 ACT — 343 ARÁ del</code> · Derecho penal · 12 libros</li>
+<li><a href="S-01-36.html">Balda 36</a> · <code>343 ARE pro — 343 BER fal</code> · Derecho penal · 14 libros</li>
+<li><a href="S-01-37.html">Balda 37</a> · <code>343 BLA del — 343 CAN con</code> · Derecho penal · 15 libros</li>
+<li><a href="S-01-38.html">Balda 38</a> · <code>343 CAN del — 343 COB man</code> · Derecho penal · 13 libros</li>
+<li><a href="S-01-39.html">Balda 39</a> · <code>343 CÓD — 343 COM</code> · Derecho penal · 16 libros</li>
+<li><a href="S-01-40.html">Balda 40</a> · <code>343 COM — 343 COM</code> · Derecho penal · 15 libros</li>
+<li><a href="S-01-41.html">Balda 41</a> · <code>343 COM — 343 CRI</code> · Derecho penal · 14 libros</li>
+<li><a href="S-01-42.html">Balda 42</a> · <code>343 CUE con — 343 DEL</code> · Derecho penal · 15 libros</li>
+</ul>
+<h3>Estantería 02</h3><ul class="enlaces">
+<li><a href="S-02-1.html">Balda 1</a> · <code>343 DEL — 343 DER</code> · Derecho penal · 18 libros</li>
+<li><a href="S-02-2.html">Balda 2</a> · <code>343 DET — 343 EMP</code> · Derecho penal · 11 libros</li>
+<li><a href="S-02-3.html">Balda 3</a> · <code>343 ENC — 343 FER com</code> · Derecho penal · 16 libros</li>
+<li><a href="S-02-4.html">Balda 4</a> · <code>343 FER del — 343 GEN</code> · Derecho penal · 13 libros</li>
+<li><a href="S-02-5.html">Balda 5</a> · <code>343 GIM del — 343 GRA jur</code> · Derecho penal · 15 libros</li>
+<li><a href="S-02-6.html">Balda 6</a> · <code>343 GRA pro — 343 IZA inv</code> · Derecho penal · 14 libros</li>
+<li><a href="S-02-7.html">Balda 7</a> · <code>343 JAÉ lib — 343 JOS del</code> · Derecho penal · 15 libros</li>
+<li><a href="S-02-8.html">Balda 8</a> · <code>343 JOS doc — 343 LAU abo</code> · Derecho penal · 15 libros</li>
+<li><a href="S-02-9.html">Balda 9</a> · <code>343 LAU del — 343 LOR adn</code> · Derecho penal · 13 libros</li>
+<li><a href="S-02-10.html">Balda 10</a> · <code>343 LUC — 343 MAR del</code> · Derecho penal · 15 libros</li>
+<li><a href="S-02-11.html">Balda 11</a> · <code>343 MAR imp — 343 MES def</code> · Derecho penal · 15 libros</li>
+<li><a href="S-02-12.html">Balda 12</a> · <code>343 MES del — 343 MUÑ err</code> · Derecho penal · 15 libros</li>
+<li><a href="S-02-13.html">Balda 13</a> · <code>343 MUÑ nue — 343 PAS tab</code> · Derecho penal · 15 libros</li>
+<li><a href="S-02-14.html">Balda 14</a> · <code>343 PEL fra — 343 POB</code> · Derecho penal · 12 libros</li>
+</ul>
+<h3>Estantería 03</h3><ul class="enlaces">
+<li><a href="S-03-1.html">Balda 1</a> · <code>343 POL — 343 PRO</code> · Derecho penal · 17 libros</li>
+<li><a href="S-03-2.html">Balda 2</a> · <code>343 PRO — 343 QUI com</code> · Derecho penal · 13 libros</li>
+<li><a href="S-03-3.html">Balda 3</a> · <code>343 QUI tra — 343 ROD del</code> · Derecho penal · 16 libros</li>
+<li><a href="S-03-4.html">Balda 4</a> · <code>343 ROD der — 343 SÁI lec</code> · Derecho penal · 14 libros</li>
+<li><a href="S-03-5.html">Balda 5</a> · <code>343 SÁN act — 343 SIS</code> · Derecho penal · 15 libros</li>
+<li><a href="S-03-6.html">Balda 6</a> · <code>343 SOL omi — 343 URR agr</code> · Derecho penal · 14 libros</li>
+<li><a href="S-03-7.html">Balda 7</a> · <code>343 VAL — 343 VIL res</code> · Derecho penal · 15 libros</li>
+<li><a href="S-03-8.html">Balda 8</a> · <code>343 VIN — 343.1 ALE pro</code> · Derecho penal · 15 libros</li>
+<li><a href="S-03-9.html">Balda 9</a> · <code>343.1 ALM jui — 343.1 CAS</code> · Derecho procesal penal · 13 libros</li>
+<li><a href="S-03-10.html">Balda 10</a> · <code>343.1 CIR — 343.1 COR gar</code> · Derecho procesal penal · 16 libros</li>
+<li><a href="S-03-11.html">Balda 11</a> · <code>343.1 CUC cor — 343.1 ENF</code> · Derecho procesal penal · 14 libros</li>
+<li><a href="S-03-12.html">Balda 12</a> · <code>343.1 ENJ — 343.1 GÓM exc</code> · Derecho procesal penal · 15 libros</li>
+<li><a href="S-03-13.html">Balda 13</a> · <code>343.1 GÓM pro — 343.1 JUE</code> · Derecho procesal penal · 13 libros</li>
+<li><a href="S-03-14.html">Balda 14</a> · <code>343.1 JUI — 343.1 LOR man</code> · Derecho procesal penal · 16 libros</li>
+</ul>
+<h3>Estantería 04</h3><ul class="enlaces">
+<li><a href="S-04-1.html">Balda 1</a> · <code>343.1 LUZ pre — 343.1 OLI com</code> · Derecho procesal penal · 15 libros</li>
+<li><a href="S-04-2.html">Balda 2</a> · <code>343.1 OLI der — 343.1 REC</code> · Derecho procesal penal · 15 libros</li>
+<li><a href="S-04-3.html">Balda 3</a> · <code>343.1 REF — 343.1 SOT seg</code> · Derecho procesal penal · 14 libros</li>
+<li><a href="S-04-4.html">Balda 4</a> · <code>343.1 TRI — 343.15 SUA rec</code> · Derecho procesal penal · 14 libros</li>
+<li><a href="S-04-5.html">Balda 5</a> · <code>343.2 COD 2007 — 343.53 TIR pro</code> · Derecho penal. Parte general · 17 libros</li>
+<li><a href="S-04-6.html">Balda 6</a> · <code>343.61 DIV div — 344 JUR</code> · Penas. Derecho penitenciario · 11 libros</li>
+<li><a href="S-04-7.html">Balda 7</a> · <code>347 ACT — 347 BAR res</code> · Derecho civil · 16 libros</li>
+<li><a href="S-04-8.html">Balda 8</a> · <code>347 BAS enr — 347 CAS der</code> · Derecho civil · 17 libros</li>
+<li><a href="S-04-9.html">Balda 9</a> · <code>347 CAS neg — 347 CIV</code> · Derecho civil · 10 libros</li>
+<li><a href="S-04-10.html">Balda 10</a> · <code>347 CÓD — 347 COD cod</code> · Derecho civil · 14 libros</li>
+<li><a href="S-04-11.html">Balda 11</a> · <code>347 COM — 347 COM</code> · Derecho civil · 17 libros</li>
+<li><a href="S-04-12.html">Balda 12</a> · <code>347 COM — 347 COM</code> · Derecho civil · 15 libros</li>
+<li><a href="S-04-13.html">Balda 13</a> · <code>347 COM — 347 COM</code> · Derecho civil · 15 libros</li>
+<li><a href="S-04-14.html">Balda 14</a> · <code>347 COM — 347 COM</code> · Derecho civil · 14 libros</li>
+<li><a href="S-04-15.html">Balda 15</a> · <code>347 COM — 347 DIA jui</code> · Derecho civil · 15 libros</li>
+<li><a href="S-04-16.html">Balda 16</a> · <code>347 DIA lim — 347 ELE</code> · Derecho civil · 17 libros</li>
+<li><a href="S-04-17.html">Balda 17</a> · <code>347 ENN tra — 347 FER res</code> · Derecho civil · 12 libros</li>
+<li><a href="S-04-18.html">Balda 18</a> · <code>347 FON dic — 347 GAY con</code> · Derecho civil · 14 libros</li>
+</ul>
+<h3>Estantería 05</h3><ul class="enlaces">
+<li><a href="S-05-1.html">Balda 1</a> · <code>347 GÓM cad — 347 INT</code> · Derecho civil · 15 libros</li>
+<li><a href="S-05-2.html">Balda 2</a> · <code>347 JIM res — 347 LÓP est</code> · Derecho civil · 15 libros</li>
+<li><a href="S-05-3.html">Balda 3</a> · <code>347 LOP pro — 347 MED cul</code> · Derecho civil · 14 libros</li>
+<li><a href="S-05-4.html">Balda 4</a> · <code>347 MED dañ — 347 OCA com</code> · Derecho civil · 16 libros</li>
+<li><a href="S-05-5.html">Balda 5</a> · <code>347 ORT med — 347 PUI cad</code> · Derecho civil · 13 libros</li>
+<li><a href="S-05-6.html">Balda 6</a> · <code>347 PUI com — 347 PUI fun</code> · Derecho civil · 14 libros</li>
+<li><a href="S-05-7.html">Balda 7</a> · <code>347 PUI tra — 347 RES</code> · Derecho civil · 17 libros</li>
+<li><a href="S-05-8.html">Balda 8</a> · <code>347 ROC der — 347 SÁN Est</code> · Derecho civil · 12 libros</li>
+<li><a href="S-05-9.html">Balda 9</a> · <code>347 SAN res — 347 VAL acc</code> · Derecho civil · 16 libros</li>
+<li><a href="S-05-10.html">Balda 10</a> · <code>347 VALL der — 347.17 DER der</code> · Derecho civil · 13 libros</li>
+<li><a href="S-05-11.html">Balda 11</a> · <code>347.23 ALB usu — 347.23 GOM art</code> · Propiedad · 16 libros</li>
+<li><a href="S-05-12.html">Balda 12</a> · <code>347.23 GOM dat — 347.23 MUN reg</code> · Propiedad · 14 libros</li>
+<li><a href="S-05-13.html">Balda 13</a> · <code>347.23 PAR com — 347.23 VIL pro</code> · Propiedad · 18 libros</li>
+<li><a href="S-05-14.html">Balda 14</a> · <code>347.26 ARC rég — 347.26 VIL acc</code> · Derechos reales de goce. Servidumbres · 12 libros</li>
+<li><a href="S-05-15.html">Balda 15</a> · <code>347.27 AVI hip — 347.27 GAR con</code> · Derechos reales de garantía. Hipoteca · 14 libros</li>
+<li><a href="S-05-16.html">Balda 16</a> · <code>347.27 GAR def — 347.27 REC</code> · Derechos reales de garantía. Hipoteca · 15 libros</li>
+<li><a href="S-05-17.html">Balda 17</a> · <code>347.27 REV — 347.4 ALF con</code> · Derechos reales de garantía. Hipoteca · 14 libros</li>
+<li><a href="S-05-18.html">Balda 18</a> · <code>347.4 ALO pro — 347.4 CAN asu</code> · Obligaciones y contratos · 15 libros</li>
+</ul>
+<h3>Estantería 06</h3><ul class="enlaces">
+<li><a href="S-06-1.html">Balda 1</a> · <code>347.4 CAN con — 347.4 CON der</code> · Obligaciones y contratos · 14 libros</li>
+<li><a href="S-06-2.html">Balda 2</a> · <code>347.4 DÁV obl — 347.4 FER res</code> · Obligaciones y contratos · 15 libros</li>
+<li><a href="S-06-3.html">Balda 3</a> · <code>347.4 FUE nov — 347.4 HER con</code> · Obligaciones y contratos · 14 libros</li>
+<li><a href="S-06-4.html">Balda 4</a> · <code>347.4 LAU — 347.4 MÉN arr</code> · Obligaciones y contratos · 14 libros</li>
+<li><a href="S-06-5.html">Balda 5</a> · <code>347.4 MOL res — 347.4 PRI</code> · Obligaciones y contratos · 16 libros</li>
+<li><a href="S-06-6.html">Balda 6</a> · <code>347.4 PRO — 347.4 TAP der</code> · Obligaciones y contratos · 14 libros</li>
+<li><a href="S-06-7.html">Balda 7</a> · <code>347.4 TRA — 347.446 CLA cla</code> · Contratos en particular · 14 libros</li>
+<li><a href="S-06-8.html">Balda 8</a> · <code>347.47 CAS nue — 347.51 MED nue</code> · Responsabilidad civil · 15 libros</li>
+<li><a href="S-06-9.html">Balda 9</a> · <code>347.51 MON res — 347.6 CÁM com</code> · Derecho de familia. Sucesiones · 15 libros</li>
+<li><a href="S-06-10.html">Balda 10</a> · <code>347.6 CAM pen — 347.6 CUS</code> · Derecho de familia. Sucesiones · 11 libros</li>
+<li><a href="S-06-11.html">Balda 11</a> · <code>347.6 DER — 347.6 ELE</code> · Derecho de familia. Sucesiones · 17 libros</li>
+<li><a href="S-06-12.html">Balda 12</a> · <code>347.6 ENN tra — 347.6 FLO pro</code> · Derecho de familia. Sucesiones · 16 libros</li>
+<li><a href="S-06-13.html">Balda 13</a> · <code>347.6 FOS est — 347.6 HAZ pen</code> · Derecho de familia. Sucesiones · 14 libros</li>
+<li><a href="S-06-14.html">Balda 14</a> · <code>347.6 HIJ der — 347.6 LÓP uni</code> · Derecho de familia. Sucesiones · 15 libros</li>
+<li><a href="S-06-15.html">Balda 15</a> · <code>347.6 MAG der — 347.6 MES int</code> · Derecho de familia. Sucesiones · 14 libros</li>
+<li><a href="S-06-16.html">Balda 16</a> · <code>347.6 MON dis — 347.6 PER car</code> · Derecho de familia. Sucesiones · 14 libros</li>
+<li><a href="S-06-17.html">Balda 17</a> · <code>347.6 PÉR der — 347.6 REI uni</code> · Derecho de familia. Sucesiones · 14 libros</li>
+<li><a href="S-06-18.html">Balda 18</a> · <code>347.6 RIV der — 347.6 SAN dos</code> · Derecho de familia. Sucesiones · 14 libros</li>
+<li><a href="S-06-19.html">Balda 19</a> · <code>347.6 SÁN est — 347.6 UNI</code> · Derecho de familia. Sucesiones · 15 libros</li>
+<li><a href="S-06-20.html">Balda 20</a> · <code>347.6 VAL est — 347.626 DER M24828</code> · Derecho de familia. Sucesiones · 16 libros</li>
+<li><a href="S-06-21.html">Balda 21</a> · <code>347.63 GET cus — 347.7 ACT</code> · Derecho mercantil · 15 libros</li>
+</ul>
+<h3>Estantería 07</h3><ul class="enlaces">
+<li><a href="S-07-1.html">Balda 1</a> · <code>347.7 ACT — 347.7 ÁLV reg</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-07-2.html">Balda 2</a> · <code>347.7 ÁLV res — 347.7 AUT</code> · Derecho mercantil · 15 libros</li>
+<li><a href="S-07-3.html">Balda 3</a> · <code>347.7 AVI soc — 347.7 BON jui</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-07-4.html">Balda 4</a> · <code>347.7 BON pro — 347.7 CAS est</code> · Derecho mercantil · 17 libros</li>
+<li><a href="S-07-5.html">Balda 5</a> · <code>347.7 CAS nue — 347.7 COM</code> · Derecho mercantil · 13 libros</li>
+<li><a href="S-07-6.html">Balda 6</a> · <code>347.7 COM — 347.7 COM</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-07-7.html">Balda 7</a> · <code>347.7 COM — 347.7 CON</code> · Derecho mercantil · 15 libros</li>
+<li><a href="S-07-8.html">Balda 8</a> · <code>347.7 CON — 347.7 CUR con</code> · Derecho mercantil · 13 libros</li>
+<li><a href="S-07-9.html">Balda 9</a> · <code>347.7 DAS der — 347.7 DER</code> · Derecho mercantil · 16 libros</li>
+<li><a href="S-07-10.html">Balda 10</a> · <code>347.7 DER — 347.7 DOM com</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-07-11.html">Balda 11</a> · <code>347.7 DOM reg — 347.7 EST</code> · Derecho mercantil · 16 libros</li>
+<li><a href="S-07-12.html">Balda 12</a> · <code>347.7 EST est — 347.7 FRA exc</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-07-13.html">Balda 13</a> · <code>347.7 FUE gru — 347.7 GAR der</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-07-14.html">Balda 14</a> · <code>347.7 GAR dur — 347.7 GON cop</code> · Derecho mercantil · 15 libros</li>
+</ul>
+<h3>Estantería 08</h3><ul class="enlaces">
+<li><a href="S-08-1.html">Balda 1</a> · <code>347.7 GON lea — 347.7 JOR</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-08-2.html">Balda 2</a> · <code>347.7 JUR — 347.7 LEG</code> · Derecho mercantil · 16 libros</li>
+<li><a href="S-08-3.html">Balda 3</a> · <code>347.7 LEY — 347.7 LLA con</code> · Derecho mercantil · 13 libros</li>
+<li><a href="S-08-4.html">Balda 4</a> · <code>347.7 LLE deb — 347.7 MAR</code> · Derecho mercantil · 15 libros</li>
+<li><a href="S-08-5.html">Balda 5</a> · <code>347.7 MAR con — 347.7 MÉN gar</code> · Derecho mercantil · 15 libros</li>
+<li><a href="S-08-6.html">Balda 6</a> · <code>347.7 MEN opo — 347.7 NEI pro</code> · Derecho mercantil · 13 libros</li>
+<li><a href="S-08-7.html">Balda 7</a> · <code>347.7 NOM eva — 347.7 OTX res</code> · Derecho mercantil · 16 libros</li>
+<li><a href="S-08-8.html">Balda 8</a> · <code>347.7 PAN con — 347.7 PER fia</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-08-9.html">Balda 9</a> · <code>347.7 POL pro — 347.7 PRO</code> · Derecho mercantil · 15 libros</li>
+<li><a href="S-08-10.html">Balda 10</a> · <code>347.7 PUL dec — 347.7 REP</code> · Derecho mercantil · 11 libros</li>
+</ul>
+<h3>Estantería 09</h3><ul class="enlaces">
+<li><a href="S-09-1.html">Balda 1</a> · <code>347.7 RES — 347.7 ROD rep</code> · Derecho mercantil · 18 libros</li>
+<li><a href="S-09-2.html">Balda 2</a> · <code>347.7 ROD sal — 347.7 SAG com</code> · Derecho mercantil · 15 libros</li>
+<li><a href="S-09-3.html">Balda 3</a> · <code>347.7 SAG est — 347.7 SÁN tra</code> · Derecho mercantil · 14 libros</li>
+<li><a href="S-09-4.html">Balda 4</a> · <code>347.7 SEB con — 347.7 TAP der</code> · Derecho mercantil · 12 libros</li>
+<li><a href="S-09-5.html">Balda 5</a> · <code>347.7 TRA — 347.7 VEG con</code> · Derecho mercantil · 17 libros</li>
+<li><a href="S-09-6.html">Balda 6</a> · <code>347.7 VEI mas — 347.7:347.9 SIL tas</code> · Derecho mercantil · 12 libros</li>
+</ul>
+<h3>Estantería 10</h3><ul class="enlaces">
+<li><a href="S-10-1.html">Balda 1</a> · <code>347.72 BER soc — 347.72 GALL cap</code> · Sociedades mercantiles · 18 libros</li>
+<li><a href="S-10-2.html">Balda 2</a> · <code>347.72 GAR dil — 347.72 PAZ der</code> · Sociedades mercantiles · 14 libros</li>
+<li><a href="S-10-3.html">Balda 3</a> · <code>347.72 PUL der — 347.72 TRA tra</code> · Sociedades mercantiles · 15 libros</li>
+<li><a href="S-10-4.html">Balda 4</a> · <code>347.72 VAL aud — 347.73 CON adm</code> · Derecho bancario y del mercado de valores · 14 libros</li>
+<li><a href="S-10-5.html">Balda 5</a> · <code>347.73 CON suj — 347.73 PUL pre</code> · Derecho bancario y del mercado de valores · 15 libros</li>
+<li><a href="S-10-6.html">Balda 6</a> · <code>347.73 PUL ree — 347.736.98 CUE exo</code> · Derecho concursal · 14 libros</li>
+<li><a href="S-10-7.html">Balda 7</a> · <code>347.76 CON con — 347.78 MER fir</code> · Propiedad industrial · 15 libros</li>
+<li><a href="S-10-8.html">Balda 8</a> · <code>347.79 COM — 347.9 BAC asi</code> · Derecho procesal civil · 15 libros</li>
+<li><a href="S-10-9.html">Balda 9</a> · <code>347.9 BAL pru — 347.9 CIE</code> · Derecho procesal civil · 13 libros</li>
+<li><a href="S-10-10.html">Balda 10</a> · <code>347.9 CIR — 347.9 COM</code> · Derecho procesal civil · 16 libros</li>
+<li><a href="S-10-11.html">Balda 11</a> · <code>347.9 COM — 347.9 CUB reg</code> · Derecho procesal civil · 14 libros</li>
+<li><a href="S-10-12.html">Balda 12</a> · <code>347.9 CUE — 347.9 EJE</code> · Derecho procesal civil · 16 libros</li>
+<li><a href="S-10-13.html">Balda 13</a> · <code>347.9 ESC est — 347.9 FER der</code> · Derecho procesal civil · 14 libros</li>
+<li><a href="S-10-14.html">Balda 14</a> · <code>347.9 FER pro — 347.9 GAS ter</code> · Derecho procesal civil · 14 libros</li>
+<li><a href="S-10-15.html">Balda 15</a> · <code>347.9 GIM con — 347.9 JUE</code> · Derecho procesal civil · 15 libros</li>
+<li><a href="S-10-16.html">Balda 16</a> · <code>347.9 JUR — 347.9 LÓP com</code> · Derecho procesal civil · 14 libros</li>
+<li><a href="S-10-17.html">Balda 17</a> · <code>347.9 LÓP con — 347.9 MAN com</code> · Derecho procesal civil · 18 libros</li>
+<li><a href="S-10-18.html">Balda 18</a> · <code>347.9 MAN man — 347.9 MAT</code> · Derecho procesal civil · 10 libros</li>
+<li><a href="S-10-19.html">Balda 19</a> · <code>347.9 MED — 347.9 MON ter</code> · Derecho procesal civil · 16 libros</li>
+<li><a href="S-10-20.html">Balda 20</a> · <code>347.9 MON tra — 347.9 NIE rec</code> · Derecho procesal civil · 14 libros</li>
+<li><a href="S-10-21.html">Balda 21</a> · <code>347.9 NIE sus — 347.9 ORD pru</code> · Derecho procesal civil · 15 libros</li>
+<li><a href="S-10-22.html">Balda 22</a> · <code>347.9 ORM pru — 347.9 PRI cue</code> · Derecho procesal civil · 12 libros</li>
+<li><a href="S-10-23.html">Balda 23</a> · <code>347.9 PRI eje — 347.9 PRO</code> · Derecho procesal civil · 17 libros</li>
+<li><a href="S-10-24.html">Balda 24</a> · <code>347.9 PRO — 347.9 PSI</code> · Derecho procesal civil · 15 libros</li>
+<li><a href="S-10-25.html">Balda 25</a> · <code>347.9 PUG ter — 347.9 RIV ano</code> · Derecho procesal civil · 14 libros</li>
+<li><a href="S-10-26.html">Balda 26</a> · <code>347.9 ROB guí — 347.9 TAP com</code> · Derecho procesal civil · 15 libros</li>
+<li><a href="S-10-27.html">Balda 27</a> · <code>347.9 TAP cos — 347.9 YAÑ com</code> · Derecho procesal civil · 14 libros</li>
+<li><a href="S-10-28.html">Balda 28</a> · <code>347.91 BAN nue — 347.93 DIL dil</code> · Derecho procesal civil · 15 libros</li>
+<li><a href="S-10-29.html">Balda 29</a> · <code>347.94 ABE pru — 347.96 ESC</code> · Derecho procesal civil · 15 libros</li>
+<li><a href="S-10-30.html">Balda 30</a> · <code>347.96 ESC reg — 347.96 PRU</code> · Organización judicial. Profesiones jurídicas · 14 libros</li>
+<li><a href="S-10-31.html">Balda 31</a> · <code>347.96 REC — 349 ARC der</code> · Tribunales · 15 libros</li>
+<li><a href="S-10-32.html">Balda 32</a> · <code>349.2 ABO — 349.2 CUE</code> · Derecho del trabajo · 13 libros</li>
+<li><a href="S-10-33.html">Balda 33</a> · <code>349.2 DER — 349.2 LEY</code> · Derecho del trabajo · 16 libros</li>
+<li><a href="S-10-34.html">Balda 34</a> · <code>349.2 LIM adm — 349.2 PRO</code> · Derecho del trabajo · 15 libros</li>
+<li><a href="S-10-35.html">Balda 35</a> · <code>349.2 PRU — 349.24 PRE</code> · Derecho del trabajo · 11 libros</li>
+</ul>
+<h3>Estantería 11</h3><ul class="enlaces">
+<li><a href="S-11-1.html">Balda 1</a> · <code>349.4 APL — 349.4 FER man</code> · Derecho agrario, del suelo y urbanístico · 18 libros</li>
+<li><a href="S-11-2.html">Balda 2</a> · <code>349.4 GAR der — 349.44 CAS der</code> · Derecho agrario, del suelo y urbanístico · 15 libros</li>
+<li><a href="S-11-3.html">Balda 3</a> · <code>349.56 MON man — 349.6 MAD pro</code> · Derecho del medio ambiente · 14 libros</li>
+<li><a href="S-11-4.html">Balda 4</a> · <code>349.6 MED — 35 BAL</code> · Administración pública · 14 libros</li>
+<li><a href="S-11-5.html">Balda 5</a> · <code>35 BAR fun — 35 GAR cod</code> · Administración pública · 15 libros</li>
+<li><a href="S-11-6.html">Balda 6</a> · <code>35 GUI — 35 NUE</code> · Administración pública · 14 libros</li>
+<li><a href="S-11-7.html">Balda 7</a> · <code>35 OBJ — 35 SEG</code> · Administración pública · 15 libros</li>
+<li><a href="S-11-8.html">Balda 8</a> · <code>35 TRI — 351 DEF</code> · Administración pública: actividades y servicios · 17 libros</li>
+<li><a href="S-11-9.html">Balda 9</a> · <code>351 DEF deb — 351 INF</code> · Administración pública: actividades y servicios · 12 libros</li>
+<li><a href="S-11-10.html">Balda 10</a> · <code>351 LEY — 351 RÉG</code> · Administración pública: actividades y servicios · 12 libros</li>
+<li><a href="S-11-11.html">Balda 11</a> · <code>351 RES — 351.71 MAS nue</code> · Administración pública: actividades y servicios · 17 libros</li>
+<li><a href="S-11-12.html">Balda 12</a> · <code>351.71 QUI der — 352 LEG</code> · Seguridad pública. Policía · 14 libros</li>
+<li><a href="S-11-13.html">Balda 13</a> · <code>353 LEG 1982 — 369 NOV</code> · Seguridad social. Seguros sociales · 15 libros</li>
+<li><a href="S-11-14.html">Balda 14</a> · <code>369 PER — 82:34 PÉR ané</code> · Seguridad social. Seguros sociales · 15 libros</li>
+</ul>
+<h2>Otros listados</h2>
+<ul class="enlaces"><li><a href="seccion-revistas.html">Revistas</a> · 57 libros</li><li><a href="seccion-audiovisuales.html">Audiovisuales</a> · 34 libros</li><li><a href="sin-signatura.html">Libros sin signatura o con signatura irregular</a> · 81 libros</li></ul>
+<p class="nota"><a href="../buscar.html">Buscar en todo el fondo</a></p>
+</main>
+<footer><p>Listado de consulta. La disponibilidad es orientativa: pregunte al personal de la biblioteca.</p></footer>
+<script>(function(){var k='bib-letra',e=[0.9,1,1.15,1.3,1.5],i=1;try{var v=localStorage.getItem(k);if(v!==null)i=+v}catch(x){}function f(n){i=Math.max(0,Math.min(e.length-1,n));document.documentElement.style.fontSize=(17*e[i])+'px';try{localStorage.setItem(k,String(i))}catch(x){}}f(i);document.addEventListener('click',function(ev){var b=ev.target.closest('[data-letra]');if(b)f(i+Number(b.getAttribute('data-letra')))})})();</script>
+</body>
+</html>
